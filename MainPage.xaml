@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.MainPage"
+             Title="Dara System">
+
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="20"
+        HorizontalOptions="Center"
+        VerticalOptions="Center">
+
+        <Label
+            Text="Dara System"
+            FontSize="22"
+            HorizontalOptions="Center" />
+
+        <Border
+            Padding="15"
+            Stroke="LightGray"
+            StrokeShape="RoundRectangle 8"
+            WidthRequest="200">
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Categoria_Tapped" />
+            </Border.GestureRecognizers>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+
+                <Label
+                    Text="Categoría:"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    x:Name="CategoriasLabel"
+                    FontSize="16"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </Border>
+
+        <Border
+            Padding="15"
+            Stroke="LightGray"
+            StrokeShape="RoundRectangle 8"
+            WidthRequest="200">
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Cliente_Tapped" />
+            </Border.GestureRecognizers>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+
+                <Label
+                    Text="Cliente:"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    x:Name="ClientesLabel"
+                    FontSize="16"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </Border>
+
+        <Border
+            Padding="15"
+            Stroke="LightGray"
+            StrokeShape="RoundRectangle 8"
+            WidthRequest="200">
+
+            <Border.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Producto_Tapped" />
+            </Border.GestureRecognizers>
+
+            <VerticalStackLayout HorizontalOptions="Center">
+
+                <Label
+                    Text="Producto:"
+                    FontSize="18"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center" />
+
+                <Label
+                    x:Name="ProductosLabel"
+                    FontSize="16"
+                    HorizontalOptions="Center" />
+
+            </VerticalStackLayout>
+        </Border>
+
+    </VerticalStackLayout>
+
+</ContentPage>

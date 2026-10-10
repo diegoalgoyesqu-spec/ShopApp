@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShopApp.Views.ProductDetailPage"
+             Title="ProductDetailPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Image
+                x:Name="productoImage"
+                HeightRequest="250"
+                WidthRequest="250"
+                Aspect="AspectFit"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Nombre"
+                FontSize="16" />
+
+            <Label
+                x:Name="nombreLabel"
+                FontSize="24"
+                FontAttributes="Bold" />
+
+            <Label
+                Text="Descripción"
+                FontSize="16" />
+
+            <Label
+                x:Name="descriptionLabel"
+                FontSize="18" />
+
+            <Label
+                Text="Precio"
+                FontSize="16" />
+
+            <Label
+                x:Name="precioLabel"
+                FontSize="20"
+                FontAttributes="Bold" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
