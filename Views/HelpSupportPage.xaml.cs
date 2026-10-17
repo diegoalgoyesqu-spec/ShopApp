@@ -15,8 +15,12 @@ public partial class HelpSupportPage : ContentPage
 
     private void Button_Clicked(object sender, EventArgs e)
     {
-        var dataObject = (HelpSupportData)Resources["data"];
-        dataObject.VisitasPendientes = 30;
+        var dataObject = Resources["data"] as HelpSupportData;
+
+        if (dataObject != null)
+        {
+            dataObject.VisitasPendientes = 30;
+        }
     }
 }
 
@@ -24,6 +28,7 @@ public class HelpSupportData : INotifyPropertyChanged
 {
     private int _visitasPendientes = 5;
     private ObservableCollection<Client> _clients = new();
+    private Client _clienteSeleccionado;
 
     public HelpSupportData()
     {
@@ -32,14 +37,14 @@ public class HelpSupportData : INotifyPropertyChanged
         PropertyChanged += HelpSupportData_PropertyChanged;
     }
 
-    private async void HelpSupportData_PropertyChanged(object? sender,PropertyChangedEventArgs e)
+    private async void HelpSupportData_PropertyChanged(
+        object? sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(ClienteSeleccionado))
+        if (e.PropertyName == nameof(ClienteSeleccionado)
+            && ClienteSeleccionado != null)
         {
-            {
-                var uri = $"{nameof(HelpSupportDetailPage)}?id={ClienteSeleccionado.Id}";
-                await Shell.Current.GoToAsync(uri);
-            }
+            var uri = $"{nameof(HelpSupportDetailPage)}?id={ClienteSeleccionado.Id}";
+            await Shell.Current.GoToAsync(uri);
         }
     }
 
@@ -69,8 +74,6 @@ public class HelpSupportData : INotifyPropertyChanged
         }
     }
 
-    private Client _clienteSeleccionado;
-
     public Client ClienteSeleccionado
     {
         get { return _clienteSeleccionado; }
@@ -84,7 +87,6 @@ public class HelpSupportData : INotifyPropertyChanged
         }
     }
 
-
     public event PropertyChangedEventHandler PropertyChanged;
 
     private void RaisePropertyChanged(
@@ -95,3 +97,4 @@ public class HelpSupportData : INotifyPropertyChanged
             new PropertyChangedEventArgs(nombre));
     }
 }
+
