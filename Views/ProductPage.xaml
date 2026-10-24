@@ -10,7 +10,7 @@
             <SearchBar
                 x:Name="buscarProducto"
                 Placeholder="Buscar producto"
-                TextChanged="BuscarProducto_TextChanged" />
+                TextChanged="BuscarProducto_TextChanged"/>
 
             <VerticalStackLayout
                 x:Name="container"

@@ -7,6 +7,8 @@ namespace ShopApp.DataAcces
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Client> Clients { get; set; }
+        public DbSet<Compra> Compras { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -15,6 +17,8 @@ namespace ShopApp.DataAcces
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Compra>().HasNoKey();
             modelBuilder.Entity<Category>().HasData(
                 new Category(1, "Electrónica"),
                 new Category(2, "Computadoras"),
@@ -58,5 +62,8 @@ namespace ShopApp.DataAcces
         int Id,
         string Nombre,
         string Direccion);
+
+    public record Compra(int ClientId, int CroductId, int Cantidad);
+    
 }
 

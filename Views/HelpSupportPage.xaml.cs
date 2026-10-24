@@ -90,7 +90,8 @@ public class HelpSupportData : INotifyPropertyChanged
     public event PropertyChangedEventHandler PropertyChanged;
 
     private void RaisePropertyChanged(
-        [CallerMemberName] string nombre = null)
+        [CallerMemberName] string nombre = 
+        null)
     {
         PropertyChanged?.Invoke(
             this,
