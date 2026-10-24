@@ -10,13 +10,20 @@
     </ContentPage.BindingContext>
 
     <Grid ColumnDefinitions="*,*">
+        <VerticalStackLayout>
+            <CollectionView
+                ItemsSource="{Binding Products}"
+                SelectedItem="{Binding productoseleccionado, Mode=TwoWay}"
+                ItemTemplate="{StaticResource ProductDataTemplate}"
+                HeightRequest="300"
+                SelectionMode="Single"
+            />
+        </VerticalStackLayout>
 
         <VerticalStackLayout Grid.Column="0">
-            <Picker 
-                 Title="Selecciona un producto"
-                 ItemsSource="{Binding Products}"
-                 ItemDisplayBinding="{Binding Nombre}"
-                 SelectedItem="{Binding productoseleccionado}"/>
+            <Picker ItemsSource="{Binding Products}"
+                    SelectedItem="{Binding productoseleccionado, Mode=TwoWay}"
+                    />
 
             <HorizontalStackLayout VerticalOptions="Center">
                 <Stepper
@@ -35,13 +42,13 @@
 
         <VerticalStackLayout Grid.Column="1">
             <Label Text="Nombre" />
-            <Label />
+            <Label Text="{Binding productoseleccionado.Nombre}" />
 
             <Label Text="Descripcion" />
-            <Label />
+            <Label Text="{Binding productoseleccionado.Description}" />
 
             <Label Text="Precio" />
-            <Label />
+            <Label Text="{Binding productoseleccionado.Precio, StringFormat='{}{0:C}'}" />
         </VerticalStackLayout>
 
     </Grid>

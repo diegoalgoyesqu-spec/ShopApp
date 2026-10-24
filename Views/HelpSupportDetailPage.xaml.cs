@@ -24,6 +24,10 @@ public partial class HelpSupportDetailPage : ContentPage, IQueryAttributable
 
 public class HelpSupportDetailData : BindingUtilObject
 {
+    private ObservableCollection<Product> _products;
+    private Product _productoseleccionado;
+    private int _cantidad;
+
     public HelpSupportDetailData()
     {
         var database = new ShopDbContext();
