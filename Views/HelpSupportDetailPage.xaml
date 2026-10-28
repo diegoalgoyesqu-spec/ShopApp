@@ -15,7 +15,6 @@
           ColumnSpacing="10"
           RowSpacing="10">
 
-        <!-- Selector de productos -->
         <Picker Grid.Row="0"
                 Grid.Column="0"
                 Title="Selecciona un producto"
@@ -24,7 +23,6 @@
                 SelectedItem="{Binding productoseleccionado, Mode=TwoWay}"
                 HorizontalOptions="Fill" />
 
-        <!-- Detalle del producto -->
         <VerticalStackLayout Grid.Row="0"
                              Grid.Column="1"
                              Spacing="6">
@@ -40,7 +38,6 @@
 
         </VerticalStackLayout>
 
-        <!-- Lista de productos -->
         <CollectionView Grid.Row="1"
                         Grid.Column="0"
                         ItemsSource="{Binding Products}"
@@ -48,11 +45,8 @@
                         ItemTemplate="{StaticResource ProductDataTemplate}"
                         SelectionMode="Single"
                         VerticalOptions="Fill"
-                        HorizontalOptions="Fill">
+                        HorizontalOptions="Fill" />
 
-        </CollectionView>
-
-        <!-- Cantidad -->
         <VerticalStackLayout Grid.Row="1"
                              Grid.Column="1"
                              Spacing="10"
@@ -78,7 +72,6 @@
 
         </VerticalStackLayout>
 
-        <!-- Botón Agregar -->
         <Button Grid.Row="2"
                 Grid.Column="0"
                 Grid.ColumnSpan="2"
